@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pos Kamling Village</title>
+  <link rel="icon" type="image/webp" href="green-logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="left-wrap">
+      <span class="header-text js-header-text">Pos Kamling Village</span>
+    </div>
+    <div class="right-wrap">
+      <ul class="header-menu js-header-menu">
+        <li class="header-link">Layanan</li>
+        <li class="header-link">Profil Desa</li>
+        <li class="header-link">Kontak</li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+
+      <div class="hero-parallax">
+        <div class="parallax-item parallax-clouds"></div>
+        <div class="parallax-item parallax-hills"></div>
+        <div class="parallax-item parallax-village"></div>
+        <div class="parallax-item parallax-trees"></div>
+      </div>
+
+      <div class="container">
+        <div class="subtitle js-anim-subtitle">
+          <span class="subtitle-line"></span>
+          <span class="subtitle-pill">Pos Kamling</span>
+          <span class="subtitle-line"></span>
+        </div>
+
+        <div class="title-block">
+          <h1 class="title-h1 js-anim-title">Jaringan Sistem Informasi Desa</h1>
+        </div>
+
+        <div class="text-block">
+          <p class="desc-1 js-anim-desc">
+            Simulasi layanan administrasi desa berbasis jaringan untuk pengujian scanning, analisis trafik HTTP, dan observasi kebocoran data login pada lingkungan praktikum yang terisolasi.
+          </p>
+        </div>
+
+        <div class="btn-block">
+          <button class="btn js-open-login" type="button">
+            <span class="btn-glow"></span>
+            <span class="btn-2">Mulai Simulasi</span>
+          </button>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-label">Akun Dummy Praktikum</div>
+          <div class="hero-card-grid">
+            <div>
+              <span class="hero-card-title">Nama</span>
+              <strong>Pak RT</strong>
+            </div>
+            <div>
+              <span class="hero-card-title">Alamat</span>
+              <strong>Tenggarong</strong>
+            </div>
+            <div>
+              <span class="hero-card-title">Password</span>
+              <strong>poskam123#!</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-panel" id="login-panel" aria-hidden="true">
+      <div class="container login-container">
+        <div class="login-copy">
+          <span class="section-kicker">Form Uji Trafik HTTP</span>
+          <h2 class="section-title">Login Administrasi Desa</h2>
+          <p class="section-desc">
+            Form ini dibuat khusus untuk simulasi praktikum. Saat dijalankan melalui HTTP lokal, data yang dikirim akan terlihat jelas pada capture Wireshark karena tidak menggunakan HTTPS.
+          </p>
+
+          <div class="note-card">
+            <span class="note-title">Tujuan Pengujian</span>
+            <ul>
+              <li>Membandingkan trafik scanning dan trafik login</li>
+              <li>Mengamati kebocoran data teks pada protokol HTTP</li>
+              <li>Menunjukkan risiko jika form sensitif dikirim tanpa enkripsi</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="login-box">
+          <div class="login-box-head">
+            <span class="login-badge">HTTP Dummy Login</span>
+            <button class="ghost-btn js-back-hero" type="button">Kembali ke Hero</button>
+          </div>
+
+          <form id="desa-login-form" class="form-card" method="GET" action="index.html" novalidate>
+            <input type="hidden" name="submitted" value="1">
+
+            <div class="field">
+              <label for="nama">Nama</label>
+              <input id="nama" name="nama" type="text" placeholder="Contoh: Pak RT" required>
+            </div>
+
+            <div class="field">
+              <label for="alamat">Alamat</label>
+              <input id="alamat" name="alamat" type="text" placeholder="Contoh: Tenggarong" required>
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="text" placeholder="Ketik password dummy" required autocomplete="off">
+            </div>
+
+            <div class="password-meter">
+              <div data-carac="length" data-level="0" class="level-line">
+                <div class="line-label">Length</div>
+                <div class="line-progression"></div>
+              </div>
+              <div data-carac="uppercases" data-level="0" class="level-line">
+                <div class="line-label">Capitals</div>
+                <div class="line-progression"></div>
+              </div>
+              <div data-carac="specials" data-level="0" class="level-line">
+                <div class="line-label">Specials</div>
+                <div class="line-progression"></div>
+              </div>
+              <div data-carac="numbers" data-level="0" class="level-line">
+                <div class="line-label">Numbers</div>
+                <div class="line-progression"></div>
+              </div>
+            </div>
+
+            <div class="dummy-hint">
+              Gunakan akun dummy:
+              <strong>Pak RT</strong>,
+              <strong>Tenggarong</strong>,
+              <strong>poskam123#!</strong>
+            </div>
+
+            <div id="status-message" class="status-message" aria-live="polite"></div>
+
+            <div class="form-actions">
+              <button class="submit-btn" type="submit">Kirim Data Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="left-wrap">
+      <span class="footer-link">Praktikum</span>
+      <span class="divider"></span>
+      <span class="footer-link">Keamanan Jaringan</span>
+    </div>
+    <div class="center-wrap">
+      <span class="footer-link">© 2026 Pos Kamling</span>
+    </div>
+    <div class="right-wrap">
+      <span class="footer-link">⋆｡𖦹°⭒˚｡⋆</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
